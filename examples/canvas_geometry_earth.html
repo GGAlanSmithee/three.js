@@ -58,8 +58,8 @@
 
 				container = document.getElementById( 'container' );
 
-				camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 2000 );
-				camera.position.z = 500;
+				camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 20 );
+				camera.position.z = 5;
 
 				scene = new THREE.Scene();
 
@@ -71,7 +71,7 @@
 				var loader = new THREE.TextureLoader();
 				loader.load( 'textures/land_ocean_ice_cloud_2048.jpg', function ( texture ) {
 
-					var geometry = new THREE.SphereGeometry( 200, 20, 20 );
+					var geometry = new THREE.SphereGeometry( 2, 20, 20 );
 
 					var material = new THREE.MeshBasicMaterial( { map: texture, overdraw: 0.5 } );
 					var mesh = new THREE.Mesh( geometry, material );
@@ -102,11 +102,11 @@
 
 				var texture = new THREE.CanvasTexture( canvas );
 
-				var geometry = new THREE.PlaneBufferGeometry( 300, 300, 3, 3 );
+				var geometry = new THREE.PlaneBufferGeometry( 3, 3, 3, 3 );
 				var material = new THREE.MeshBasicMaterial( { map: texture, overdraw: 0.5 } );
 
 				var mesh = new THREE.Mesh( geometry, material );
-				mesh.position.y = - 250;
+				mesh.position.y = - 2.5;
 				mesh.rotation.x = - Math.PI / 2;
 				group.add( mesh );
 
@@ -143,8 +143,8 @@
 
 			function onDocumentMouseMove( event ) {
 
-				mouseX = ( event.clientX - windowHalfX );
-				mouseY = ( event.clientY - windowHalfY );
+				mouseX = ( event.clientX - windowHalfX ) / 100;
+				mouseY = ( event.clientY - windowHalfY ) / 100;
 
 			}
 
