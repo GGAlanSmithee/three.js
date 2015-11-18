@@ -47,20 +47,20 @@
 				info.innerHTML = '<a href="http://threejs.org" target="_blank">three.js</a> - clickable objects';
 				container.appendChild( info );
 
-				camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 10000 );
-				camera.position.y = 300;
-				camera.position.z = 500;
+				camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 100 );
+				camera.position.y = 3;
+				camera.position.z = 5;
 
 				scene = new THREE.Scene();
 
-				var geometry = new THREE.BoxGeometry( 100, 100, 100 );
+				var geometry = new THREE.BoxGeometry( 1, 1, 1 );
 
 				for ( var i = 0; i < 20; i ++ ) {
 
 					var object = new THREE.Mesh( geometry, new THREE.MeshBasicMaterial( { color: Math.random() * 0xffffff, opacity: 0.5 } ) );
-					object.position.x = Math.random() * 800 - 400;
-					object.position.y = Math.random() * 800 - 400;
-					object.position.z = Math.random() * 800 - 400;
+					object.position.x = Math.random() * 8 - 4;
+					object.position.y = Math.random() * 8 - 4;
+					object.position.z = Math.random() * 8 - 4;
 					object.scale.x = Math.random() * 2 + 1;
 					object.scale.y = Math.random() * 2 + 1;
 					object.scale.z = Math.random() * 2 + 1;
@@ -129,9 +129,9 @@
 				if ( intersects.length > 0 ) {
 
 					new TWEEN.Tween( intersects[ 0 ].object.position ).to( {
-						x: Math.random() * 800 - 400,
-						y: Math.random() * 800 - 400,
-						z: Math.random() * 800 - 400 }, 2000 )
+						x: Math.random() * 8 - 4,
+						y: Math.random() * 8 - 4,
+						z: Math.random() * 8 - 4 }, 2000 )
 					.easing( TWEEN.Easing.Elastic.Out).start();
 
 					new TWEEN.Tween( intersects[ 0 ].object.rotation ).to( {
@@ -142,14 +142,6 @@
 
 				}
 
-				/*
-				// Parse all the faces
-				for ( var i in intersects ) {
-
-					intersects[ i ].face.material[ 0 ].color.setHex( Math.random() * 0xffffff | 0x80000000 );
-
-				}
-				*/
 			}
 
 			//
@@ -163,7 +155,7 @@
 
 			}
 
-			var radius = 600;
+			var radius = 6;
 			var theta = 0;
 
 			function render() {
