@@ -1,0 +1,20 @@
++ canvas_ascii_effect (small info loss - can't go smaller)
+- canvas_camera_orthographic (not solved yet)
+- canvas_camera_orthographic2 (not solved yet)
++ canvas_effect_stereo
+- canvas_geometry_birds (nothing to do?)
++ canvas_geometry_box (changed name from cube to box)
++ canvas_geometry_earth
++ canvas_geometry_hierarchy
++ canvas_geometry_nurbs
++ canvas_geometry_panorama (didn't really need to be updated but good to keep a low number of units in general)
++ canvas_geometry_panorama_fisheye (didn't really need to be updated but good to keep a low number of units in general)
+- canvas_geometry_shapes (nothing to do?)
+- canvas_geometry_terrain (not solved yet)
++ canvas_geometry_text
++ canvas_interactive_cubes
++ canvas_interactive_cubes_tween
++ canvas_interactive_particles
++ canvas_interactive_voxelpainter (1 voxel = 5 units since I could not get scale to work well with 1 unit voxels)
++ canvas_lines
++ canvas_lines_colors
