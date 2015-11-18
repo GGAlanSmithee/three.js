@@ -58,7 +58,7 @@
 
 				container = document.getElementById( 'container' );
 
-				camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 1100 );
+				camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10 );
 
 				scene = new THREE.Scene();
 
@@ -81,7 +81,7 @@
 
 				];
 
-				mesh = new THREE.Mesh( new THREE.BoxGeometry( 300, 300, 300, 7, 7, 7 ), new THREE.MeshFaceMaterial( materials ) );
+				mesh = new THREE.Mesh( new THREE.BoxGeometry( 10, 10, 10, 7, 7, 7 ), new THREE.MeshFaceMaterial( materials ) );
 				mesh.scale.x = - 1;
 				scene.add( mesh );
 
