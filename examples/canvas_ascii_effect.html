@@ -56,28 +56,28 @@
 				container.appendChild( info );
 
 				camera = new THREE.PerspectiveCamera( 70, width / height, 1, 1000 );
-				camera.position.y = 150;
-				camera.position.z = 500;
+				camera.position.y = 15;
+				camera.position.z = 50;
 
 				controls = new THREE.TrackballControls( camera );
 
 				scene = new THREE.Scene();
 
 				var light = new THREE.PointLight( 0xffffff );
-				light.position.set( 500, 500, 500 );
+				light.position.set( 50, 50, 50 );
 				scene.add( light );
 
 				var light = new THREE.PointLight( 0xffffff, 0.25 );
-				light.position.set( - 500, - 500, - 500 );
+				light.position.set( - 50, - 50, - 50 );
 				scene.add( light );
 
-				sphere = new THREE.Mesh( new THREE.SphereGeometry( 200, 20, 10 ), new THREE.MeshLambertMaterial( { shading: THREE.FlatShading } ) );
+				sphere = new THREE.Mesh( new THREE.SphereGeometry( 20, 20, 10 ), new THREE.MeshLambertMaterial( { shading: THREE.FlatShading } ) );
 				scene.add( sphere );
 
 				// Plane
 
-				plane = new THREE.Mesh( new THREE.PlaneBufferGeometry( 400, 400 ), new THREE.MeshBasicMaterial( { color: 0xe0e0e0 } ) );
-				plane.position.y = - 200;
+				plane = new THREE.Mesh( new THREE.PlaneBufferGeometry( 40, 40 ), new THREE.MeshBasicMaterial( { color: 0xe0e0e0 } ) );
+				plane.position.y = - 20;
 				plane.rotation.x = - Math.PI / 2;
 				scene.add( plane );
 
@@ -126,7 +126,7 @@
 
 				var timer = Date.now() - start;
 
-				sphere.position.y = Math.abs( Math.sin( timer * 0.002 ) ) * 150;
+				sphere.position.y = Math.abs( Math.sin( timer * 0.002 ) ) * 15;
 				sphere.rotation.x = timer * 0.0003;
 				sphere.rotation.z = timer * 0.0002;
 
