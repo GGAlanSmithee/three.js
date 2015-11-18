@@ -57,27 +57,27 @@
 
 				var container = document.getElementById( 'container' );
 
-				camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 1000 );
-				camera.position.set( 0, - 6, 100 );
+				camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 100 );
+				camera.position.set( 0, - 0.6, 5 );
 
 				scene = new THREE.Scene();
 
 				scene.add( new THREE.AmbientLight( 0x00020 ) );
 
-				light1 = new THREE.PointLight( 0xff0040, 1, 50 );
+				light1 = new THREE.PointLight( 0xff0040, 1, 5 );
 				scene.add( light1 );
 
-				light2 = new THREE.PointLight( 0x0040ff, 1, 50 );
+				light2 = new THREE.PointLight( 0x0040ff, 1, 5 );
 				scene.add( light2 );
 
-				light3 = new THREE.PointLight( 0x80ff80, 1, 50 );
+				light3 = new THREE.PointLight( 0x80ff80, 1, 5 );
 				scene.add( light3 );
 
 				var PI2 = Math.PI * 2;
 				var program = function ( context ) {
 
 					context.beginPath();
-					context.arc( 0, 0, 0.5, 0, PI2, true );
+					context.arc( 0, 0, 0.05, 0, PI2, true );
 					context.fill();
 
 				};
@@ -95,6 +95,7 @@
 				loader.load( 'obj/WaltHeadLo.js', function ( geometry ) {
 
 					mesh = new THREE.Mesh( geometry, new THREE.MeshLambertMaterial( { color: 0xffffff, shading: THREE.FlatShading, overdraw: 0.5 } ) );
+					mesh.scale.set(0.05, 0.05, 0.05);
 					scene.add( mesh );
 
 				} );
@@ -134,17 +135,17 @@
 
 				if ( mesh ) mesh.rotation.y -= 0.01;
 
-				light1.position.x = Math.sin( time * 0.7 ) * 30;
-				light1.position.y = Math.cos( time * 0.5 ) * 40;
-				light1.position.z = Math.cos( time * 0.3 ) * 30;
+				light1.position.x = Math.sin( time * 0.7 ) * 3;
+				light1.position.y = Math.cos( time * 0.5 ) * 4;
+				light1.position.z = Math.cos( time * 0.3 ) * 3;
 
-				light2.position.x = Math.cos( time * 0.3 ) * 30;
-				light2.position.y = Math.sin( time * 0.5 ) * 40;
-				light2.position.z = Math.sin( time * 0.7 ) * 30;
+				light2.position.x = Math.cos( time * 0.3 ) * 3;
+				light2.position.y = Math.sin( time * 0.5 ) * 4;
+				light2.position.z = Math.sin( time * 0.7 ) * 3;
 
-				light3.position.x = Math.sin( time * 0.7 ) * 30;
-				light3.position.y = Math.cos( time * 0.3 ) * 40;
-				light3.position.z = Math.sin( time * 0.5 ) * 30;
+				light3.position.x = Math.sin( time * 0.7 ) * 3;
+				light3.position.y = Math.cos( time * 0.3 ) * 4;
+				light3.position.z = Math.sin( time * 0.5 ) * 3;
 
 				renderer.render( scene, camera );
 
