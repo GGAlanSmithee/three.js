@@ -68,13 +68,13 @@
 				info.innerHTML = 'Drag to spin';
 				container.appendChild( info );
 
-				camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 1000 );
-				camera.position.set( 0, 150, 500 );
+				camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 10 );
+				camera.position.set( 0, 1.5, 5 );
 
 				scene = new THREE.Scene();
 
 				group = new THREE.Group();
-				group.position.y = 50;
+				group.position.y = .5;
 				scene.add( group );
 
 				// NURBS curve
@@ -93,9 +93,9 @@
 
 					nurbsControlPoints.push(
 						new THREE.Vector4(
-							Math.random() * 400 - 200,
-							Math.random() * 400,
-							Math.random() * 400 - 200,
+							Math.random() * 4 - 2,
+							Math.random() * 4,
+							Math.random() * 4 - 2,
 							1 // weight of control point: higher means stronger attraction
 						)
 					);
@@ -112,7 +112,7 @@
 				var nurbsMaterial = new THREE.LineBasicMaterial( { linewidth: 10, color: 0x333333 } );
 
 				var nurbsLine = new THREE.Line( nurbsGeometry, nurbsMaterial );
-				nurbsLine.position.set( 0, -100, 0 );
+				nurbsLine.position.set( 0, -1, 0 );
 
 				var nurbsControlPointsGeometry = new THREE.Geometry();
 				nurbsControlPointsGeometry.vertices = nurbsCurve.controlPoints;
