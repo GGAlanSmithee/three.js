@@ -18,3 +18,7 @@
 + canvas_interactive_voxelpainter (1 voxel = 5 units since I could not get scale to work well with 1 unit voxels)
 + canvas_lines
 + canvas_lines_colors
++ canvas_lines_colors_2d
++ canvas_lines_colors_dashed
+- canvas_lines_colors_sphere (waiting with this till later, a bit tricky)
+- canvas_materials (nothing to change, size / scale is already reasonable)
