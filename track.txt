@@ -24,4 +24,5 @@
 - canvas_materials (nothing to change, size / scale is already reasonable)
 + canvas_materials_reflection
 - canvas_materials_video (unsure if size needs to be adjusted here.. probably)
-
++ canvas_morphtargets_horse
++ canvas_particles_floor
