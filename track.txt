@@ -22,3 +22,6 @@
 + canvas_lines_colors_dashed
 - canvas_lines_colors_sphere (waiting with this till later, a bit tricky)
 - canvas_materials (nothing to change, size / scale is already reasonable)
++ canvas_materials_reflection
+- canvas_materials_video (unsure if size needs to be adjusted here.. probably)
+

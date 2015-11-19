@@ -25,7 +25,7 @@
 		<script>
 
 			var container, stats;
-			var camera, scene, projector, renderer;
+			var camera, scene, renderer;
 			var mesh, mixer;
 
 			init();
@@ -46,9 +46,9 @@
 
 				//
 
-				camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 10000 );
-				camera.position.y = 300;
-				camera.target = new THREE.Vector3( 0, 150, 0 );
+				camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 100 );
+				camera.position.y = 30;
+				camera.target = new THREE.Vector3( 0, 15, 0 );
 
 				scene = new THREE.Scene();
 
@@ -58,7 +58,7 @@
 				light.position.set( 1, 1, 1 ).normalize();
 				scene.add( light );
 
-				var light = new THREE.DirectionalLight( 0xffefef, 1.5 );
+				light = new THREE.DirectionalLight( 0xffefef, 1.5 );
 				light.position.set( -1, -1, -1 ).normalize();
 				scene.add( light );
 
@@ -72,7 +72,7 @@
 					} );
 
 					mesh = new THREE.Mesh( geometry, material );
-					mesh.scale.set( 1.5, 1.5, 1.5 );
+					mesh.scale.set( 0.15, 0.15, 0.15 );
 					scene.add( mesh );
 
 					mixer = new THREE.AnimationMixer( mesh );
@@ -123,7 +123,7 @@
 
 			}
 
-			var radius = 600;
+			var radius = 60;
 			var theta = 0;
 
 			var prevTime = Date.now();
