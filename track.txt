@@ -27,3 +27,4 @@
 + canvas_morphtargets_horse
 + canvas_particles_floor
 + canvas_particles_random
++ canvas_particles_sprites
