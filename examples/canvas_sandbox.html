@@ -31,15 +31,6 @@
 
 			var sphere;
 
-			var targetRotation = 0;
-			var targetRotationOnMouseDown = 0;
-
-			var mouseX = 0;
-			var mouseXOnMouseDown = 0;
-
-			var windowHalfX = window.innerWidth / 2;
-			var windowHalfY = window.innerHeight / 2;
-
 			var moveForward = false;
 			var moveBackwards = false;
 			var moveLeft = false;
@@ -60,16 +51,16 @@
 				container = document.createElement( 'div' );
 				document.body.appendChild( container );
 
-				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 10000 );
-				camera.position.set( 0, 150, 400 );
-				camera.target = new THREE.Vector3( 0, 150, 0 );
+				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 100 );
+				camera.position.set( 0, 1.5, 4 );
+				camera.target = new THREE.Vector3( 0, 1.5, 0 );
 
 				scene = new THREE.Scene();
 
 
 				// Grid
 
-				var size = 500, step = 100;
+				var size = 5, step = 1;
 
 				var geometry = new THREE.Geometry();
 
@@ -92,7 +83,7 @@
 
 				objects = [];
 
-				geometry = new THREE.IcosahedronGeometry( 100, 1 );
+				geometry = new THREE.IcosahedronGeometry( 1, 1 );
 
 				material = new THREE.MeshBasicMaterial( { envMap: THREE.ImageUtils.loadTexture( 'textures/metal.jpg', THREE.SphericalReflectionMapping ), overdraw: 0.5 } );
 
@@ -100,13 +91,13 @@
 
 					sphere = new THREE.Mesh( geometry, material );
 
-					sphere.position.x = Math.random() * 1000 - 500;
-					sphere.position.y = Math.random() * 1000 - 500;
-					sphere.position.z = Math.random() * 1000 - 500;
+					sphere.position.x = Math.random() * 10 - 5;
+					sphere.position.y = Math.random() * 10 - 5;
+					sphere.position.z = Math.random() * 10 - 5;
 
-					sphere.rotation.x = Math.random() * 200 - 100;
-					sphere.rotation.y = Math.random() * 200 - 100;
-					sphere.rotation.z = Math.random() * 200 - 100;
+					sphere.rotation.x = Math.random() * 2 - 1;
+					sphere.rotation.y = Math.random() * 2 - 1;
+					sphere.rotation.z = Math.random() * 2 - 1;
 
 					sphere.scale.x = sphere.scale.y = sphere.scale.z = Math.random() + 0.5;
 
@@ -166,9 +157,6 @@
 
 			function onWindowResize() {
 
-				windowHalfX = window.innerWidth / 2;
-				windowHalfY = window.innerHeight / 2;
-
 				camera.aspect = window.innerWidth / window.innerHeight;
 				camera.updateProjectionMatrix();
 
@@ -223,17 +211,17 @@
 
 			function render() {
 
-				if ( moveForward ) camera.position.z -= 10;
-				if ( moveBackwards ) camera.position.z += 10;
+				if ( moveForward ) camera.position.z -= 0.1;
+				if ( moveBackwards ) camera.position.z += 0.1;
 
-				if ( moveLeft ) camera.position.x -= 10;
-				if ( moveRight ) camera.position.x += 10;
+				if ( moveLeft ) camera.position.x -= 0.1;
+				if ( moveRight ) camera.position.x += 0.1;
 
-				if ( moveUp ) camera.position.y += 10;
-				if ( moveDown ) camera.position.y -= 10;
+				if ( moveUp ) camera.position.y += 0.1;
+				if ( moveDown ) camera.position.y -= 0.1;
 
-				if ( targetMoveLeft ) camera.target.x -= 10;
-				if ( targetMoveRight ) camera.target.x += 10;
+				if ( targetMoveLeft ) camera.target.x -= 0.1;
+				if ( targetMoveRight ) camera.target.x += 0.1;
 
 				camera.lookAt( camera.target );
 
@@ -249,10 +237,10 @@
 
 				// camera
 
-				debugContext.moveTo( camera.position.x * 0.1, camera.position.z * 0.1 );
-				debugContext.lineTo( camera.target.x * 0.1, camera.target.z * 0.1 );
-				debugContext.rect( camera.position.x * 0.1 - 5, camera.position.z * 0.1 - 5, 10, 10 );
-				debugContext.rect( camera.target.x * 0.1 - 5, camera.target.z * 0.1 - 5, 10, 10 );
+				debugContext.moveTo( camera.position.x * 10, camera.position.z * 10 );
+				debugContext.lineTo( camera.target.x * 10, camera.target.z * 10 );
+				debugContext.rect( camera.position.x * 10 - 5, camera.position.z * 10 - 5, 10, 10 );
+				debugContext.rect( camera.target.x * 10 - 5, camera.target.z * 10 - 5, 10, 10 );
 				debugContext.rect( - 50, - 50, 100, 100 );
 
 				for ( var i = 0, l = objects.length; i < l; i++ ) {
@@ -261,9 +249,9 @@
 
 					object.rotation.x += 0.01;
 					object.rotation.y += 0.005;
-					object.position.y = Math.sin( object.rotation.x ) * 200;
+					object.position.y = Math.sin( object.rotation.x ) * 2;
 
-					debugContext.rect( object.position.x * 0.1 - 5, object.position.z * 0.1 - 5, 10, 10 );
+					debugContext.rect( object.position.x * 10 - 5, object.position.z * 10 - 5, 10, 10 );
 
 				}
 
