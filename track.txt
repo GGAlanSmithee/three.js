@@ -29,3 +29,5 @@
 + canvas_particles_random (should particles be smaller?)
 + canvas_particles_sprites (should particles be smaller?)
 - canvas_particles_vawes
++ canvas_sandbox
+- css3d_* (won't change)
