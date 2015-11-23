@@ -54,7 +54,7 @@
 	<body>
 
 		<div id="info"><a href="http://threejs.org" target="_blank">three.js</a> - earth [fly controls]<br/><br/>
-		<b>WASD</b> move, <b>R|F</b> up | down, <b>Q|E</b> roll, <b>up|down</b> pitch, <b>left|right</b> yaw<br/>
+		<b>Left mouse</b> forward <b>Right mouse</b> backward<br/>
 		</div>
 
 		<script>
@@ -73,9 +73,9 @@
 			var SCREEN_WIDTH  = window.innerWidth;
 
 			var container, stats;
-			var camera, controls, scene, sceneCube, renderer;
+			var camera, controls, scene, renderer;
 			var geometry, meshPlanet, meshClouds, meshMoon;
-			var dirLight, pointLight, ambientLight;
+			var dirLight;
 
 			var d, dPlanet, dMoon, dMoonVec = new THREE.Vector3();
 

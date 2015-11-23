@@ -31,3 +31,7 @@
 - canvas_particles_vawes
 + canvas_sandbox
 - css3d_* (won't change)
++ misc_animation_authoring
++ misc_animation_keys (broken?)
+- misc_controls_deviceorientation (no device to test with)
++ misc_controls_fly (just changed controls text - scale is fine)
