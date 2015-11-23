@@ -74,8 +74,8 @@
 				container = document.createElement( 'div' );
 				document.body.appendChild( container );
 
-				camera = new THREE.PerspectiveCamera( 33, window.innerWidth / window.innerHeight, 1, 10000 );
-				camera.position.z = 700;
+				camera = new THREE.PerspectiveCamera( 33, window.innerWidth / window.innerHeight, 1, 100 );
+				camera.position.z = 7;
 
 				scene = new THREE.Scene();
 
@@ -84,7 +84,7 @@
 				container.appendChild( renderer.domElement );
 
 				var geometry = new THREE.Geometry(),
-				points = hilbert3D( new THREE.Vector3( 0,0,0 ), 200.0, 4, 0, 1, 2, 3, 4, 5, 6, 7 );
+				points = hilbert3D( new THREE.Vector3( 0,0,0 ), 2.0, 4, 0, 1, 2, 3, 4, 5, 6, 7 );
 
 				for ( i = 0; i < points.length; i ++ ) {
 
@@ -94,7 +94,7 @@
 
 				// lines
 
-				var line, p, scale = 0.3, d = 125, c1 = 0x553300, c2 = 0x555555, c3 = 0x992800, 
+				var line, p, scale = 0.3, d = 1.25, c1 = 0x553300, c2 = 0x555555, c3 = 0x992800, 
 				g1 = geometry,
 				m1 = new THREE.LineBasicMaterial( { color: c1, opacity: 1, blending: THREE.AdditiveBlending, transparent: true } ),
 				m2 = new THREE.LineBasicMaterial( { color: c2, opacity: 1, blending: THREE.AdditiveBlending, transparent: true } ),
@@ -186,8 +186,8 @@
 
 			function render() {
 
-				camera.position.x += ( mouseX - camera.position.x ) * .05;
-				camera.position.y += ( - mouseY + 200 - camera.position.y ) * .05;
+				camera.position.x += ( ( mouseX / 100 ) - camera.position.x ) * .05;
+				camera.position.y += ( ( ( - mouseY + 200 ) / 100 ) - camera.position.y ) * .05;
 
 				camera.lookAt( scene.position );
 
