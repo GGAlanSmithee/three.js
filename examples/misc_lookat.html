@@ -59,15 +59,15 @@
 				container = document.createElement( 'div' );
 				document.body.appendChild( container );
 
-				camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 15000 );
-				camera.position.z = 3200;
+				camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 150 );
+				camera.position.z = 32;
 
 				scene = new THREE.Scene();
 
-				sphere = new THREE.Mesh( new THREE.SphereGeometry( 100, 20, 20 ), new THREE.MeshNormalMaterial() );
+				sphere = new THREE.Mesh( new THREE.SphereGeometry( 1, 20, 20 ), new THREE.MeshNormalMaterial() );
 				scene.add( sphere );
 
-				var geometry = new THREE.CylinderGeometry( 0, 10, 100, 12 );
+				var geometry = new THREE.CylinderGeometry( 0, 0.1, 1, 12 );
 				geometry.rotateX( Math.PI / 2 );
 
 				var material = new THREE.MeshNormalMaterial();
@@ -75,9 +75,9 @@
 				for ( var i = 0; i < 1000; i ++ ) {
 
 					var mesh = new THREE.Mesh( geometry, material );
-					mesh.position.x = Math.random() * 4000 - 2000;
-					mesh.position.y = Math.random() * 4000 - 2000;
-					mesh.position.z = Math.random() * 4000 - 2000;
+					mesh.position.x = Math.random() * 40 - 20;
+					mesh.position.y = Math.random() * 40 - 20;
+					mesh.position.z = Math.random() * 40 - 20;
 					mesh.scale.x = mesh.scale.y = mesh.scale.z = Math.random() * 4 + 2;
 					scene.add( mesh );
 
@@ -138,9 +138,9 @@
 
 				var time = Date.now() * 0.0005;
 
-				sphere.position.x = Math.sin( time * 0.7 ) * 2000;
-				sphere.position.y = Math.cos( time * 0.5 ) * 2000;
-				sphere.position.z = Math.cos( time * 0.3 ) * 2000;
+				sphere.position.x = Math.sin( time * 0.7 ) * 20;
+				sphere.position.y = Math.cos( time * 0.5 ) * 20;
+				sphere.position.z = Math.cos( time * 0.3 ) * 20;
 
 				for ( var i = 1, l = scene.children.length; i < l; i ++ ) {
 
@@ -148,8 +148,8 @@
 
 				}
 
-				camera.position.x += ( mouseX - camera.position.x ) * .05;
-				camera.position.y += ( - mouseY - camera.position.y ) * .05;
+				camera.position.x += ( ( mouseX / 100 ) - camera.position.x ) * .05;
+				camera.position.y += ( ( - mouseY / 100 ) - camera.position.y ) * .05;
 				camera.lookAt( scene.position );
 
 				renderer.render( scene, camera );
