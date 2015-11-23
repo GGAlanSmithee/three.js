@@ -50,3 +50,5 @@
 + software_geometry_earth
 + software_lines_colors
 + software_lines_cubes
+- software_lines_spheres (cannot open app crashes)
++ software_lines_splines
