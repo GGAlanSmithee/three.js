@@ -36,3 +36,5 @@
 - misc_controls_deviceorientation (no device to test with)
 + misc_controls_fly (just changed controls text - scale is fine)
 + misc_controls_orbit
+- misc_controls_pointerlock (waiting)
++ misc_controls_trackball
