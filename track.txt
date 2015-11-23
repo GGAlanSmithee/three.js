@@ -52,4 +52,7 @@
 + software_lines_cubes
 - software_lines_spheres (cannot open app crashes)
 + software_lines_splines
-+ software_lines_sandbox (example was broken, commented out rotation and position from update loop - need fix)
++ software_sandbox (example was broken, commented out rotation and position from update loop - need fix)
+- svg_sanbox (later?)
+- vr_cubes (cannot fix - no webvr compatible browser)
+- vr_video (cannot fix - no webvr compatible browser)
