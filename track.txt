@@ -42,3 +42,9 @@
 - misc_fps (later)
 + misc_lights_test
 + misc_lookat
+- misc_sound (does it need to be changed? later)
+- misc_ubiquity_test (later)
+- misc_ubiquity_test2 (later)
+- misc_uv_tests (not appicable)
+- raytracing_sandbox (later)
++ software_geometry_earth
