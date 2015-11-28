@@ -58,3 +58,4 @@
 - vr_video (cannot fix - no webvr compatible browser)
 - webgl_animation_cloth (can't get to wotk good - later)
 + webgl_animation_scene
++ webgl_animation_skinning_blending
