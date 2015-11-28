@@ -57,11 +57,11 @@
 
 				//
 
-				camera = new THREE.PerspectiveCamera( 27, window.innerWidth / window.innerHeight, 1, 3500 );
-				camera.position.z = 2750;
+				camera = new THREE.PerspectiveCamera( 27, window.innerWidth / window.innerHeight, 1, 35 );
+				camera.position.z = 27.5;
 
 				scene = new THREE.Scene();
-				scene.fog = new THREE.Fog( 0x050505, 2000, 3500 );
+				scene.fog = new THREE.Fog( 0x050505, 20, 35 );
 
 				//
 
@@ -87,8 +87,8 @@
 
 				var color = new THREE.Color();
 
-				var n = 800, n2 = n/2;	// triangles spread in the cube
-				var d = 12, d2 = d/2;	// individual triangle size
+				var n = 8, n2 = n/2;	// triangles spread in the cube
+				var d = .12, d2 = d/2;	// individual triangle size
 
 				var pA = new THREE.Vector3();
 				var pB = new THREE.Vector3();
