@@ -93,8 +93,8 @@
 
 		function init() {
 
-			camera = new THREE.PerspectiveCamera( 40, WIDTH / HEIGHT, 1, 10000 );
-			camera.position.z = 300;
+			camera = new THREE.PerspectiveCamera( 40, WIDTH / HEIGHT, 1, 10 );
+			camera.position.z = 3;
 
 			scene = new THREE.Scene();
 
@@ -118,7 +118,7 @@
 			});
 
 
-			var radius = 200;
+			var radius = 2;
 
 			geometry = new THREE.BufferGeometry();
 
@@ -140,7 +140,7 @@
 				colors[ i3 + 1 ] = color.g;
 				colors[ i3 + 2 ] = color.b;
 
-				sizes[ i ] = 20;
+				sizes[ i ] = 2;
 
 			}
 
@@ -198,7 +198,7 @@
 
 			for ( var i = 0; i < particles; i++ ) {
 
-				sizes[ i ] = 10 * ( 1 + Math.sin( 0.1 * i + time ) );
+				sizes[ i ] = 0.1 * ( 1 + Math.sin( 0.1 * i + time ) );
 
 			}
 

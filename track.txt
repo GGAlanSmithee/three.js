@@ -59,3 +59,7 @@
 - webgl_animation_cloth (can't get to wotk good - later)
 + webgl_animation_scene
 + webgl_animation_skinning_blending
++ webgl_animation_morph
++ webgl_buffergeometry
+- webgl_buffergeometry_constructued_from_geometry (not yet)
++ webgl_buffergeometry_custom_attributes_particles
