@@ -64,3 +64,5 @@
 - webgl_buffergeometry_constructued_from_geometry (not yet)
 + webgl_buffergeometry_custom_attributes_particles
 + webgl_buffergeometry_drawcalls
+- webgl_buffergeometry_instancing (already have a good unit size)
++ webgl_buffergeometry_instancing_billboards

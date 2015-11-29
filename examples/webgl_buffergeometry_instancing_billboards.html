@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>three.js webgl - instanced particles - billboards - colors</title>
@@ -125,13 +125,13 @@
 			container = document.createElement( 'div' );
 			document.body.appendChild( container );
 
-			camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 5000 );
-			camera.position.z = 1400;
+			camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 50 );
+			camera.position.z = 14;
 
 			scene = new THREE.Scene();
 
 			geometry = new THREE.InstancedBufferGeometry();
-			geometry.copy( new THREE.CircleBufferGeometry( 1, 6 ) );
+			geometry.copy( new THREE.CircleBufferGeometry( .01, 6 ) );
 
 			var particleCount = 75000;
 
@@ -162,7 +162,7 @@
 			} );
 
 			mesh = new THREE.Mesh( geometry, material );
-			mesh.scale.set( 500, 500, 500 );
+			mesh.scale.set( 5, 5, 5 );
 			scene.add( mesh );
 
 			renderer.setPixelRatio( window.devicePixelRatio );
