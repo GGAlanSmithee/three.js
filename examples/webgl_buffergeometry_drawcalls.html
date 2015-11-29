@@ -54,13 +54,13 @@
 
 			var maxParticleCount = 1000;
 			var particleCount = 500;
-			var r = 800;
+			var r = 8;
 			var rHalf = r / 2;
 
 			var effectController = {
 				showDots: true,
 				showLines: true,
-				minDistance: 150,
+				minDistance: 1.5,
 				limitConnections: false,
 				maxConnections: 20,
 				particleCount: 500
@@ -75,7 +75,7 @@
 
 				gui.add( effectController, "showDots" ).onChange( function( value ) { pointCloud.visible = value; } );
 				gui.add( effectController, "showLines" ).onChange( function( value ) { linesMesh.visible = value; } );
-				gui.add( effectController, "minDistance", 10, 300 );
+				gui.add( effectController, "minDistance", 0.1, 3 );
 				gui.add( effectController, "limitConnections" );
 				gui.add( effectController, "maxConnections", 0, 30, 1 );
 				gui.add( effectController, "particleCount", 0, maxParticleCount, 1 ).onChange( function( value ) {
@@ -95,8 +95,8 @@
 
 				//
 
-				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 4000 );
-				camera.position.z = 1750;
+				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 40 );
+				camera.position.z = 17.5;
 
 				controls = new THREE.OrbitControls( camera, container );
 
@@ -140,7 +140,7 @@
 
 					// add it to the geometry
 					particlesData.push( {
-						velocity: new THREE.Vector3( -1 + Math.random() * 2, -1 + Math.random() * 2,  -1 + Math.random() * 2 ),
+						velocity: new THREE.Vector3( ( -1 + Math.random() * 2 ) / 100, ( -1 + Math.random() * 2 ) / 100, ( -1 + Math.random() * 2 ) / 100 ),
 						numConnections: 0
 					} );
 
