@@ -57,8 +57,8 @@
 
 				//
 
-				camera = new THREE.PerspectiveCamera( 27, window.innerWidth / window.innerHeight, 1, 4000 );
-				camera.position.z = 2750;
+				camera = new THREE.PerspectiveCamera( 27, window.innerWidth / window.innerHeight, 1, 40 );
+				camera.position.z = 27.5;
 
 				scene = new THREE.Scene();
 
@@ -71,7 +71,7 @@
 				var positions = new Float32Array( segments * 3 );
 				var colors = new Float32Array( segments * 3 );
 
-				var r = 800;
+				var r = 8;
 
 				for ( var i = 0; i < segments; i ++ ) {
 

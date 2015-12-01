@@ -66,3 +66,6 @@
 + webgl_buffergeometry_drawcalls
 - webgl_buffergeometry_instancing (already have a good unit size)
 + webgl_buffergeometry_instancing_billboards
+- webgl_buffergeometry_instancing_dynamic (already have a good unit size)
+- webgl_buffergeometry_instancing_interleaved_dynamic (already have a good unit size)
++ webgl_buffergeometry_lines
