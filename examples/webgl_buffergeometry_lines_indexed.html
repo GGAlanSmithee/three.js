@@ -55,8 +55,8 @@
 
 				container = document.getElementById( 'container' );
 
-				camera = new THREE.PerspectiveCamera( 27, window.innerWidth / window.innerHeight, 1, 10000 );
-				camera.position.z = 9000;
+				camera = new THREE.PerspectiveCamera( 27, window.innerWidth / window.innerHeight, 1, 100 );
+				camera.position.z = 90;
 
 				scene = new THREE.Scene();
 
@@ -135,49 +135,49 @@
 				(
 					[
 						new THREE.Vector3(0, y+0, 0),
-						new THREE.Vector3(500, y+0, 0)
+						new THREE.Vector3(5, y+0, 0)
 					],
-					false, 600
+					false, 6
 				);
 
-				y += 600;
+				y += 6;
 				snowflake
 				(
 					[
 						new THREE.Vector3(0, y+0, 0),
-						new THREE.Vector3(250, y+400, 0),
-						new THREE.Vector3(500, y+0, 0)
+						new THREE.Vector3(2.5, y+4, 0),
+						new THREE.Vector3(5, y+0, 0)
 					],
-					true, 600
+					true, 6
 				);
 
-				y += 600;
+				y += 6;
 				snowflake
 				(
 					[
 						new THREE.Vector3(0, y+0, 0),
-						new THREE.Vector3(500, y, 0),
-						new THREE.Vector3(500, y+500, 0),
-						new THREE.Vector3(0, y+500, 0),
+						new THREE.Vector3(5, y, 0),
+						new THREE.Vector3(5, y+5, 0),
+						new THREE.Vector3(0, y+5, 0),
 					],
-					true, 600
+					true, 6
 				);
 
-				y += 1000;
+				y += 10;
 				snowflake
 				(
 					[
-						new THREE.Vector3(250, y+0, 0),
-						new THREE.Vector3(500, y+0, 0),
-						new THREE.Vector3(250, y+0, 0),
-						new THREE.Vector3(250, y+250, 0),
-						new THREE.Vector3(250, y+0, 0),
+						new THREE.Vector3(2.5, y+0, 0),
+						new THREE.Vector3(5, y+0, 0),
+						new THREE.Vector3(2.5, y+0, 0),
+						new THREE.Vector3(2.5, y+2.5, 0),
+						new THREE.Vector3(2.5, y+0, 0),
 						new THREE.Vector3(0, y, 0),
-						new THREE.Vector3(250, y+0, 0),
-						new THREE.Vector3(250, y-250, 0),
-						new THREE.Vector3(250, y+0, 0),
+						new THREE.Vector3(2.5, y+0, 0),
+						new THREE.Vector3(2.5, y-2.5, 0),
+						new THREE.Vector3(2.5, y+0, 0),
 					],
-					false, 600
+					false, 6
 				);
 				// --------------------------------
 
@@ -187,15 +187,15 @@
 				geometry.computeBoundingSphere();
 
 				mesh = new THREE.LineSegments( geometry, material );
-				mesh.position.x -= 1200;
-				mesh.position.y -= 1200;
+				mesh.position.x -= 12;
+				mesh.position.y -= 12;
 
 				parent_node = new THREE.Object3D();
 				parent_node.add(mesh);
 
 				scene.add( parent_node );
 
-				renderer = new THREE.WebGLRenderer( { antialias: false } );
+				renderer = new THREE.WebGLRenderer( { antialias: true } );
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
 
