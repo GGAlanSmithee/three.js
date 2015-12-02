@@ -74,3 +74,5 @@
 - webgl_buffergeometry_rawshader (already have a good unit size)
 - webgl_buffergeometry_selective_draw (already have a good unit size)
 + webgl_buffergeometry_uint
+- webgl_camera (not applicable, simulating a starfield or some other similar large sized environment)
++ webgl_camera_cinematic
