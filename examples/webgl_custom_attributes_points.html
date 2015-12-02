@@ -50,7 +50,7 @@
 
 				vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
 
-				gl_PointSize = size * ( 300.0 / -mvPosition.z );
+				gl_PointSize = size * ( 3.0 / -mvPosition.z );
 
 				gl_Position = projectionMatrix * mvPosition;
 
@@ -93,13 +93,13 @@
 
 		function init() {
 
-			camera = new THREE.PerspectiveCamera( 40, WIDTH / HEIGHT, 1, 10000 );
-			camera.position.z = 300;
+			camera = new THREE.PerspectiveCamera( 40, WIDTH / HEIGHT, 1, 100 );
+			camera.position.z = 3;
 
 			scene = new THREE.Scene();
 
 			var amount = 100000;
-			var radius = 200;
+			var radius = 2;
 
 			var positions = new Float32Array( amount * 3 );
 			var colors = new Float32Array( amount * 3 );
