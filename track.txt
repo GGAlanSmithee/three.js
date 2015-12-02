@@ -70,3 +70,4 @@
 - webgl_buffergeometry_instancing_interleaved_dynamic (already have a good unit size)
 + webgl_buffergeometry_lines
 + webgl_buffergeometry_lines_indexed
++ webgl_buffergeometry_points

@@ -56,11 +56,11 @@
 
 				//
 
-				camera = new THREE.PerspectiveCamera( 27, window.innerWidth / window.innerHeight, 5, 3500 );
-				camera.position.z = 2750;
+				camera = new THREE.PerspectiveCamera( 27, window.innerWidth / window.innerHeight, 5, 35 );
+				camera.position.z = 27.5;
 
 				scene = new THREE.Scene();
-				scene.fog = new THREE.Fog( 0x050505, 2000, 3500 );
+				scene.fog = new THREE.Fog( 0x050505, 20, 35 );
 
 				//
 
@@ -73,7 +73,7 @@
 
 				var color = new THREE.Color();
 
-				var n = 1000, n2 = n / 2; // particles spread in the cube
+				var n = 10, n2 = n / 2; // particles spread in the cube
 
 				for ( var i = 0; i < positions.length; i += 3 ) {
 
@@ -108,7 +108,7 @@
 
 				//
 
-				var material = new THREE.PointsMaterial( { size: 15, vertexColors: THREE.VertexColors } );
+				var material = new THREE.PointsMaterial( { size: .15, vertexColors: THREE.VertexColors } );
 
 				particleSystem = new THREE.Points( geometry, material );
 				scene.add( particleSystem );
