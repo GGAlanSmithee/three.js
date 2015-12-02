@@ -49,7 +49,7 @@
 
 				vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
 
-				gl_PointSize = size * ( 300.0 / -mvPosition.z );
+				gl_PointSize = size * ( 3.0 / -mvPosition.z );
 
 				gl_Position = projectionMatrix * mvPosition;
 
@@ -89,12 +89,12 @@
 
 		function init() {
 
-			camera = new THREE.PerspectiveCamera( 45, WIDTH / HEIGHT, 1, 10000 );
-			camera.position.z = 300;
+			camera = new THREE.PerspectiveCamera( 45, WIDTH / HEIGHT, 1, 100 );
+			camera.position.z = 3;
 
 			scene = new THREE.Scene();
 
-			var radius = 100, segments = 68, rings = 38;
+			var radius = 1, segments = 68, rings = 38;
 
 			var geometry1 = new THREE.SphereGeometry( radius, segments, rings );
 			var geometry2 = new THREE.BoxGeometry( 0.8 * radius, 0.8 * radius, 0.8 * radius, 10, 10, 10 );
