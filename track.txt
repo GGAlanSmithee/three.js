@@ -81,3 +81,4 @@
 - webgl_custom_attributes_lines (could not get a good result at a lower scale)
 + webgl_custom_attributes_points
 + webgl_custom_attributes_points2
++ webgl_custom_attributes_points3
