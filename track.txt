@@ -76,3 +76,5 @@
 + webgl_buffergeometry_uint
 - webgl_camera (not applicable, simulating a starfield or some other similar large sized environment)
 + webgl_camera_cinematic
+- webgl_camera_logarithmicdepthbuffer (not applicable)
++ webgl_custom_attributes

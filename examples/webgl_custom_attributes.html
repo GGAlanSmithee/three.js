@@ -97,8 +97,8 @@
 
 		function init() {
 
-			camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 1, 10000 );
-			camera.position.z = 300;
+			camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 1, 100 );
+			camera.position.z = 3;
 
 			scene = new THREE.Scene();
 
@@ -121,7 +121,7 @@
 			});
 
 
-			var radius = 50, segments = 128, rings = 64;
+			var radius = .5, segments = 128, rings = 64;
 
 			var geometry = new THREE.SphereBufferGeometry( radius, segments, rings );
 
@@ -182,7 +182,7 @@
 
 			sphere.rotation.y = sphere.rotation.z = 0.01 * time;
 
-			uniforms.amplitude.value = 2.5 * Math.sin( sphere.rotation.y * 0.125 );
+			uniforms.amplitude.value = .025 * Math.sin( sphere.rotation.y * 0.125 );
 			uniforms.color.value.offsetHSL( 0.0005, 0, 0 );
 
 			for ( var i = 0; i < displacement.length; i ++ ) {
