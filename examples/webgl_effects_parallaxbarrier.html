@@ -77,7 +77,7 @@
 					url: 	"obj/veyron/VeyronNoUv_bin.js",
 					author: '<a href="http://artist-3d.com/free_3d_models/dnm/model_disp.php?uid=1129" target="_blank">Troyano</a>',
 					init_rotation: [ 0, 0, 0 ],
-					scale: 5.5,
+					scale: .55,
 					init_material: 4,
 					body_materials: [ 2 ],
 
@@ -93,7 +93,7 @@
 					url:	"obj/gallardo/GallardoNoUv_bin.js",
 					author: '<a href="http://artist-3d.com/free_3d_models/dnm/model_disp.php?uid=1711" target="_blank">machman_3d</a>',
 					init_rotation: [ 0, 0, 0 ],
-					scale: 3.7,
+					scale: .37,
 					init_material: 9,
 					body_materials: [ 3 ],
 
@@ -109,7 +109,7 @@
 					url:	"obj/f50/F50NoUv_bin.js",
 					author: '<a href="http://artist-3d.com/free_3d_models/dnm/model_disp.php?uid=1687" target="_blank">daniel sathya</a>',
 					init_rotation: [ 0, 0, 0 ],
-					scale: 0.175,
+					scale: .0175,
 					init_material: 2,
 					body_materials: [ 3, 6, 7, 8, 9, 10, 23, 24 ],
 
@@ -125,7 +125,7 @@
 					url:	"obj/camaro/CamaroNoUv_bin.js",
 					author: '<a href="http://www.turbosquid.com/3d-models/blender-camaro/411348" target="_blank">dskfnwn</a>',
 					init_rotation: [ 0.0, 0.0, 0.0 ],
-					scale: 75,
+					scale: 7.5,
 					init_material: 0,
 					body_materials: [ 0 ],
 
@@ -161,7 +161,7 @@
 				container = document.createElement( 'div' );
 				document.body.appendChild( container );
 
-				camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 100000 );
+				camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 1000 );
 
 				scene = new THREE.Scene();
 
@@ -179,7 +179,7 @@
 				scene.add( directionalLight );
 
 				pointLight = new THREE.PointLight( 0xffaa00, 2 );
-				pointLight.position.set( 2000, 1200, 10000 );
+				pointLight.position.set( 20, 12, 100 );
 				scene.add( pointLight );
 
 				// Skybox
@@ -196,7 +196,7 @@
 
 				} ),
 
-				mesh = new THREE.Mesh( new THREE.BoxGeometry( 100000, 100000, 100000 ), material );
+				mesh = new THREE.Mesh( new THREE.BoxGeometry( 1000, 1000, 1000 ), material );
 				scene.add( mesh );
 
 				//
@@ -611,10 +611,10 @@
 
 				var timer = -0.0002 * Date.now();
 
-				camera.position.y += ( - mouseY - camera.position.y ) * .05;
+				camera.position.y += ( - ( mouseY / 10 ) - camera.position.y ) * .005;
 
-				camera.position.x = 1000 * Math.cos( timer );
-				camera.position.z = 1000 * Math.sin( timer );
+				camera.position.x = 100 * Math.cos( timer );
+				camera.position.z = 100 * Math.sin( timer );
 
 				camera.lookAt( scene.position );
 
