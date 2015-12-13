@@ -85,3 +85,5 @@
 + webgl_decals
 + webgl_effects_anaglyph
 + webgl_effects_parallaxbarrier
+- webgl_effects_peppersghost (not sure what thsi is supposed to do)
++ webgl_effects_stereo
