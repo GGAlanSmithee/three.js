@@ -87,3 +87,5 @@
 + webgl_effects_parallaxbarrier
 - webgl_effects_peppersghost (not sure what this is supposed to do)
 + webgl_effects_stereo
+- webgl_exporter_obj (nothing to do)
++ webgl_geometries
