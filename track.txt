@@ -89,3 +89,4 @@
 + webgl_effects_stereo
 - webgl_exporter_obj (nothing to do)
 + webgl_geometries
++ webgl_geometries2
