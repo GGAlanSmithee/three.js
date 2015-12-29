@@ -86,7 +86,10 @@ THREE.VREffect = function ( renderer, onError ) {
 	// render
 
 	var cameraL = new THREE.PerspectiveCamera();
+	cameraL.layers.enable( 1 );
+
 	var cameraR = new THREE.PerspectiveCamera();
+	cameraR.layers.enable( 2 );
 
 	this.render = function ( scene, camera ) {
 
@@ -100,24 +103,17 @@ THREE.VREffect = function ( renderer, onError ) {
 			eyeFOVL = eyeParamsL.recommendedFieldOfView;
 			eyeFOVR = eyeParamsR.recommendedFieldOfView;
 
-			var sceneL, sceneR;
-
 			if ( Array.isArray( scene ) ) {
 
-				sceneL = scene[ 0 ];
-				sceneR = scene[ 1 ];
-
-			} else {
-
-				sceneL = scene;
-				sceneR = scene;
+				console.warn( 'THREE.VREffect.render() no longer supports arrays. Use object.layers instead.' );
+				scene = scene[ 0 ];
 
 			}
 
 			var size = renderer.getSize();
 			size.width /= 2;
 
-			renderer.enableScissorTest( true );
+			renderer.setScissorTest( true );
 			renderer.clear();
 
 			if ( camera.parent === null ) camera.updateMatrixWorld();
@@ -134,22 +130,20 @@ THREE.VREffect = function ( renderer, onError ) {
 			// render left eye
 			renderer.setViewport( 0, 0, size.width, size.height );
 			renderer.setScissor( 0, 0, size.width, size.height );
-			renderer.render( sceneL, cameraL );
+			renderer.render( scene, cameraL );
 
 			// render right eye
 			renderer.setViewport( size.width, 0, size.width, size.height );
 			renderer.setScissor( size.width, 0, size.width, size.height );
-			renderer.render( sceneR, cameraR );
+			renderer.render( scene, cameraR );
 
-			renderer.enableScissorTest( false );
+			renderer.setScissorTest( false );
 
 			return;
 
 		}
 
 		// Regular render mode if not HMD
-
-		if ( Array.isArray( scene ) ) scene = scene[ 0 ];
 
 		renderer.render( scene, camera );
 

@@ -19,8 +19,8 @@
 + canvas_lines
 + canvas_lines_colors
 + canvas_lines_colors_2d
-+ canvas_lines_colors_dashed
-- canvas_lines_colors_sphere (waiting with this till later, a bit tricky)
++ canvas_lines_dashed
+- canvas_lines_sphere (waiting with this till later, a bit tricky)
 - canvas_materials (nothing to change, size / scale is already reasonable)
 + canvas_materials_reflection
 - canvas_materials_video (unsure if size needs to be adjusted here.. probably)
@@ -28,7 +28,7 @@
 + canvas_particles_floor (should particles be smaller?)
 + canvas_particles_random (should particles be smaller?)
 + canvas_particles_sprites (should particles be smaller?)
-- canvas_particles_vawes
+- canvas_particles_waves
 + canvas_sandbox
 - css3d_* (won't change)
 + misc_animation_authoring
@@ -56,10 +56,10 @@
 - svg_sanbox (later?)
 - vr_cubes (cannot fix - no webvr compatible browser)
 - vr_video (cannot fix - no webvr compatible browser)
-- webgl_animation_cloth (can't get to wotk good - later)
+- webgl_animation_cloth (can't get it to work good - later)
 + webgl_animation_scene
 + webgl_animation_skinning_blending
-+ webgl_animation_morph
++ webgl_animation_skinning_morph
 + webgl_buffergeometry
 - webgl_buffergeometry_constructued_from_geometry (not yet)
 + webgl_buffergeometry_custom_attributes_particles
@@ -85,5 +85,5 @@
 + webgl_decals
 + webgl_effects_anaglyph
 + webgl_effects_parallaxbarrier
-- webgl_effects_peppersghost (not sure what thsi is supposed to do)
+- webgl_effects_peppersghost (not sure what this is supposed to do)
 + webgl_effects_stereo
