@@ -243,11 +243,43 @@ Sidebar.Object = function ( editor ) {
 
 	var objectReceiveShadow = new UI.THREE.Boolean( false, 'receive' ).onChange( update );
 	objectShadowRow.add( objectReceiveShadow );
-
+	
+	var objectShadowRadiusRow = new UI.Row();
 	var objectShadowRadius = new UI.Number( 1 ).onChange( update );
-	objectShadowRow.add( objectShadowRadius );
-
+	
+	objectShadowRadiusRow.add( new UI.Text( 'radius' ).setWidth( '90px' ) );
+	objectShadowRadiusRow.add( objectShadowRadius );
+	
+	var objectShadowCameraTopRow = new UI.Row();
+	var objectShadowCameraTop = new UI.Number( 1 ).onChange( update );
+	
+	objectShadowCameraTopRow.add( new UI.Text( 'top' ).setWidth( '90px' ) );
+	objectShadowCameraTopRow.add( objectShadowCameraTop );
+	
+	var objectShadowCameraRightRow = new UI.Row();
+	var objectShadowCameraRight = new UI.Number( 1 ).onChange( update );
+	
+	objectShadowCameraRightRow.add( new UI.Text( 'right' ).setWidth( '90px' ) );
+	objectShadowCameraRightRow.add( objectShadowCameraRight );
+	
+	var objectShadowCameraBottomRow = new UI.Row();
+	var objectShadowCameraBottom = new UI.Number( 1 ).onChange( update );
+	
+	objectShadowCameraBottomRow.add( new UI.Text( 'bottom' ).setWidth( '90px' ) );
+	objectShadowCameraBottomRow.add( objectShadowCameraBottom );
+	
+	var objectShadowCameraLeftRow = new UI.Row();
+	var objectShadowCameraLeft = new UI.Number( 1 ).onChange( update );
+	
+	objectShadowCameraLeftRow.add( new UI.Text( 'left' ).setWidth( '90px' ) );
+	objectShadowCameraLeftRow.add( objectShadowCameraLeft );
+	
 	container.add( objectShadowRow );
+	container.add( objectShadowRadiusRow );
+	container.add( objectShadowCameraTopRow );
+	container.add( objectShadowCameraRightRow );
+	container.add( objectShadowCameraBottomRow );
+	container.add( objectShadowCameraLeftRow );
 
 	// visible
 
@@ -260,8 +292,6 @@ Sidebar.Object = function ( editor ) {
 	container.add( objectVisibleRow );
 
 	// user data
-
-	var timeout;
 
 	var objectUserDataRow = new UI.Row();
 	var objectUserData = new UI.TextArea().setWidth( '150px' ).setHeight( '40px' ).setFontSize( '12px' ).onChange( update );
@@ -375,7 +405,7 @@ Sidebar.Object = function ( editor ) {
 				object.updateProjectionMatrix();
 
 			}
-
+			
 			if ( object.near !== undefined && Math.abs( object.near - objectNear.getValue() ) >= 0.01 ) {
 
 				editor.execute( new SetValueCommand( object, 'near', objectNear.getValue() ) );
@@ -456,6 +486,30 @@ Sidebar.Object = function ( editor ) {
 					editor.execute( new SetValueCommand( object.shadow, 'radius', objectShadowRadius.getValue() ) );
 
 				}
+				
+				if ( Math.abs( object.shadow.camera.top - objectShadowCameraTop.getValue() ) >= 0.01 ) {
+	
+					editor.execute( new SetValueCommand( object.shadow.camera, 'top', objectShadowCameraTop.getValue() ) );
+	
+				}
+				
+				if ( Math.abs( object.shadow.camera.right - objectShadowCameraRight.getValue() ) >= 0.01 ) {
+	
+					editor.execute( new SetValueCommand( object.shadow.camera, 'right', objectShadowCameraRight.getValue() ) );
+	
+				}
+				
+				if ( Math.abs( object.shadow.camera.bottom - objectShadowCameraBottom.getValue() ) >= 0.01 ) {
+	
+					editor.execute( new SetValueCommand( object.shadow.camera, 'bottom', objectShadowCameraBottom.getValue() ) );
+	
+				}
+				
+				if ( Math.abs( object.shadow.camera.left - objectShadowCameraLeft.getValue() ) >= 0.01 ) {
+	
+					editor.execute( new SetValueCommand( object.shadow.camera, 'left', objectShadowCameraLeft.getValue() ) );
+	
+				}
 
 			}
 
@@ -493,15 +547,22 @@ Sidebar.Object = function ( editor ) {
 			'decay' : objectDecayRow,
 			'castShadow' : objectShadowRow,
 			'receiveShadow' : objectReceiveShadow,
-			'shadow': objectShadowRadius
+			'shadow': objectShadowRadiusRow
 		};
-
+		
 		for ( var property in properties ) {
 
 			properties[ property ].setDisplay( object[ property ] !== undefined ? '' : 'none' );
 
 		}
-
+		
+		var shadowCameraDisplay = object.shadow !== undefined ? '' : 'none';
+		
+		objectShadowCameraTopRow.setDisplay( shadowCameraDisplay );
+		objectShadowCameraRightRow.setDisplay( shadowCameraDisplay );
+		objectShadowCameraBottomRow.setDisplay( shadowCameraDisplay );
+		objectShadowCameraLeftRow.setDisplay( shadowCameraDisplay );
+			
 	}
 
 	function updateTransformRows( object ) {
@@ -524,7 +585,7 @@ Sidebar.Object = function ( editor ) {
 	// events
 
 	signals.objectSelected.add( function ( object ) {
-
+	
 		if ( object !== null ) {
 
 			container.setDisplay( 'block' );
@@ -650,7 +711,10 @@ Sidebar.Object = function ( editor ) {
 		if ( object.shadow !== undefined ) {
 
 			objectShadowRadius.setValue( object.shadow.radius );
-
+			objectShadowCameraTop.setValue( object.shadow.camera.top );
+			objectShadowCameraRight.setValue( object.shadow.camera.right );
+			objectShadowCameraBottom.setValue( object.shadow.camera.bottom );
+			objectShadowCameraLeft.setValue( object.shadow.camera.left );
 		}
 
 		objectVisible.setValue( object.visible );
